@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h1>AGENDA</h1>
+        <label for="">Cédula: </label>
+        <input type="text" v-model="id"><br><br>
+        <label for="">Nombre: </label>
+        <input type="text" v-model="nombre"><br><br>
+        <label for="">Apellidos: </label>
+        <input type="text" v-model="apellido"><br><br>
+        <label for="">Télefono: </label>
+        <input type="text" v-model="telefono"><br><br>
+        <label for="">Correo:</label>
+        <input type="text" v-model="correo"><br><br>
+        <input type="button" value="guardar contacto" v-on:click="guardarContacto">
+        <input type="button"value="Ver contactos" v-on:click="consultarContactos">
+        <div>
+            <h1>Eliminar Contactos</h1>
+            <label for="">Ingrese Cedula: </label><input type="text" v-model="ideliminar">
+            <input type="button" value="Eliminar" v-on:click="eliminaCliente">
+            <br>
+            <br>
+        </div>
+        <table border=1>
+            <thead>
+                <tr>
+                    <td>Cedula</td>
+                    <td>Nombre</td>
+                    <td>Apellido</td>
+                    <td>Teléfono</td>
+                    <td>Correo</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="cliente in datosconsulta">
+                    <td>{{ cliente.id }}</td>
+                    <td>{{ cliente.nombre }}</td>
+                    <td>{{ cliente.apellido }}</td>
+                    <td>{{ cliente.telefono }}</td>
+                    <td>{{ cliente.correo }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script src="js/app.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</html>
