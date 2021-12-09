@@ -5,9 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;600&display=swap" rel="stylesheet">
+
 </head>
 <body>
     <div id="app">
+        <div id="datos">
         <h1>AGENDA</h1>
         <label for="">Nombre: </label>
         <input type="text" v-model="id"><br><br>
@@ -16,48 +22,54 @@
         <input type="text" v-model="apellido"><br><br>
         <label for="">Télefono: </label>
         <input type="text" v-model="telefono"><br><br>
-        <label for="">Correo:</label>
+        <label for="">Correo: </label>
         <input type="text" v-model="correo"><br><br>
         
-        <label for="">Dirección:</label>
+        <label for="">Dirección: </label>
         <input type="text" v-model="direccion"><br><br>
-        <label for="">Etiqueta:</label>
-        <select name="selecciona una" v-model="etiqueta">
+        <label for="">Etiqueta: </label>
+        <select name="select-css" class="select-css" v-model="etiqueta">
             <option value="Casa">Casa</option>
             <option value="Trabajo">Trabajo</option>
             <option value="Otro">Otro</option>
         </select>
-        <br><br>
-
+        <br>
+        <br>
         <input type="button" value="guardar contacto" v-on:click="guardarContacto">
+        <br>
+        <br>
         <input type="button"value="Ver contactos" v-on:click="consultarContactos">
-        <div>
+    
+        <div id="Eliminar">
             <h1>Eliminar Contactos</h1>
             <label for="">Ingrese Nombre: </label><input type="text" v-model="ideliminar">
             <input type="button" value="Eliminar" v-on:click="eliminaContacto">
             <br>
             <br>
         </div>
-        <table border=1>
-            <thead>
-                <tr>
-                    <td>Nombre</td>
-                    <td>Apellido</td>
-                    <td>Teléfono</td>
-                    <td>Correo</td>
-                    <td>Dirección</td>
-                </tr>
-            </thead>
-            <tbody>
-                <tr v-for="contacto in datosconsulta">
-                    <td>{{ contacto.id }}</td>
-                    <td>{{ contacto.apellido }}</td>
-                    <td>{{ contacto.telefono }}</td>
-                    <td>{{ contacto.correo }}</td>
-                    <td>{{ contacto.direccion+". "+contacto.etiqueta }}</td>
-                </tr>
-            </tbody>
-        </table>
+        </div>
+        <div id="tabla">
+            <table border=1>
+                <thead>
+                    <tr>
+                        <td>Nombre</td>
+                        <td>Apellido</td>
+                        <td>Teléfono</td>
+                        <td>Correo</td>
+                        <td>Dirección</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="caption" v-for="contacto in datosconsulta">
+                        <td>{{ contacto.id }}</td>
+                        <td>{{ contacto.apellido }}</td>
+                        <td>{{ contacto.telefono }}</td>
+                        <td>{{ contacto.correo }}</td>
+                        <td>{{ contacto.direccion+". "+contacto.etiqueta }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
