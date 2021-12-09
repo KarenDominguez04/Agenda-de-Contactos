@@ -16,8 +16,6 @@ public class ContactoModelo {
         String adres;
         String label;
     }
-
-
     public Long getId() {
         return id;
     }
