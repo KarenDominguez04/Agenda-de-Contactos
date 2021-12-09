@@ -9,18 +9,24 @@ public class ContactoModelo {
     private String apellido;
     private String telefono;
     private String correo;
-    private String direccion;
-    private String etiqueta;
+    //private String direccion;
+    //private String etiqueta;
     
+    public class di{
+        String adres;
+        String label;
+    }
+
+
     public Long getId() {
         return id;
     }
-    public String getEtiqueta() {
-        return etiqueta;
-    }
-    public void setEtiqueta(String etiqueta) {
-        this.etiqueta = etiqueta;
-    }
+    //public String getEtiqueta() {
+    //    return etiqueta;
+    //}
+    //public void setEtiqueta(String etiqueta) {
+      //  this.etiqueta = etiqueta;
+    //}
     public void setId(Long id) {
         this.id = id;
     }
@@ -48,11 +54,11 @@ public class ContactoModelo {
     public void setCorreo(String correo) {
         this.correo = correo;
     }
-    public String getDireccion() {
-        return direccion;
-    }
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
-    }
+    //public String getDireccion() {
+        //return direccion;
+    //}
+    //public void setDireccion(String direccion) {
+    //        this.direccion = direccion;
+    //}
     
 }

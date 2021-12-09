@@ -15,7 +15,7 @@ new Vue({
     methods:{
 
         guardarContacto(){
-            const endpoint="http://localhost:8080/cliente";
+            const endpoint="http://localhost:8080/contacto";
             const opciones={
                 method:'POST',
                 headers:{'Content-Type':'application/json'},
@@ -34,17 +34,17 @@ new Vue({
 
         },
         consultarContactos(){
-            endpoint="http://localhost:8080/cliente";
+            endpoint="http://localhost:8080/contacto";
             fetch(endpoint).then(async response=>{
                 this.datosconsulta=await response.json();
             })
         },
         eliminaCliente(){
-            const endpoint="http://localhost:8080/cliente/"+this.ideliminar;
+            const endpoint="http://localhost:8080/contacto/"+this.ideliminar;
             const opciones={method:'DELETE'};
 
             fetch(endpoint, opciones).then(async response=>{
-                alert("el cliente fué eliminado");
+                alert("el contaacto fué eliminado");
                 this.ideliminar="";
             })
         }

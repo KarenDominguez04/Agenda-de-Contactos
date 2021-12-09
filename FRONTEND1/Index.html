@@ -19,6 +19,17 @@
         <input type="text" v-model="telefono"><br><br>
         <label for="">Correo:</label>
         <input type="text" v-model="correo"><br><br>
+        <label for="">Dirección:</label>
+
+        <input type="text" v-model="adres"><br><br>
+        <label for="">Etiqueta:</label>
+        <select name="selecciona una" v-model="label">
+            <option value="">Familia</option>
+            <option value="">Amigos</option>
+            <option value="">Otros</option>
+        </select>
+        <br><br>
+
         <input type="button" value="guardar contacto" v-on:click="guardarContacto">
         <input type="button"value="Ver contactos" v-on:click="consultarContactos">
         <div>
