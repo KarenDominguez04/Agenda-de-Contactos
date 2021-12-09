@@ -7,6 +7,8 @@ new Vue({
             apellido:"",
             telefono:"",
             correo:"",
+            direccion:"",
+            etiqueta:"",
             datosconsulta:{},
             ideliminar:"",
         }
@@ -19,7 +21,7 @@ new Vue({
             const opciones={
                 method:'POST',
                 headers:{'Content-Type':'application/json'},
-                body:JSON.stringify({id:this.id, nombre:this.nombre, apellido:this.apellido,telefono:this.telefono,correo:this.correo})
+                body:JSON.stringify({id:this.id, nombre:this.nombre, apellido:this.apellido,telefono:this.telefono,correo:this.correo, direccion:this.direccion, etiqueta:this.etiqueta})
             };
             fetch(endpoint,opciones).then(async response=>{
                 alert("Contacto guardado");
@@ -39,12 +41,12 @@ new Vue({
                 this.datosconsulta=await response.json();
             })
         },
-        eliminaCliente(){
+        eliminaContacto(){
             const endpoint="http://localhost:8080/contacto/"+this.ideliminar;
             const opciones={method:'DELETE'};
 
             fetch(endpoint, opciones).then(async response=>{
-                alert("el contaacto fué eliminado");
+                alert("El contacto fue eliminado");
                 this.ideliminar="";
             })
         }

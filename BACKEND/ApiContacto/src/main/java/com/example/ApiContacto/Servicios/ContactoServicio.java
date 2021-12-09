@@ -20,7 +20,7 @@ public class ContactoServicio {
     public ArrayList<ContactoModelo> consultaTodos(){
         return(ArrayList<ContactoModelo>) repo.findAll();
     }
-    public boolean eliminaContacto(Long id){
+    public boolean eliminaContacto(String id){
         if (repo.existsById(id)){
             repo.deleteById(id);
             return true;
@@ -29,7 +29,7 @@ public class ContactoServicio {
             return false;
         }
     }
-    public Optional<ContactoModelo> consultaContactoId(Long id){
+    public Optional<ContactoModelo> consultaContactoId(String id){
         return repo.findById(id);
     }
     public ArrayList<ContactoModelo> obtenerContactoPorNombres(String nombre){

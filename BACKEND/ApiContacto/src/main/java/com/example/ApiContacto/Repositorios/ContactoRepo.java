@@ -8,7 +8,7 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface ContactoRepo extends MongoRepository<ContactoModelo, Long> {
+public interface ContactoRepo extends MongoRepository<ContactoModelo, String> {
     ContactoModelo findByEtiqueta(String etiqueta);
     ArrayList<ContactoModelo> findByNombre(String nombre);
     ContactoModelo findByCorreo(String correo);

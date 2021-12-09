@@ -9,24 +9,23 @@
 <body>
     <div id="app">
         <h1>AGENDA</h1>
-        <label for="">Cédula: </label>
-        <input type="text" v-model="id"><br><br>
         <label for="">Nombre: </label>
-        <input type="text" v-model="nombre"><br><br>
+        <input type="text" v-model="id"><br><br>
+
         <label for="">Apellidos: </label>
         <input type="text" v-model="apellido"><br><br>
         <label for="">Télefono: </label>
         <input type="text" v-model="telefono"><br><br>
         <label for="">Correo:</label>
         <input type="text" v-model="correo"><br><br>
+        
         <label for="">Dirección:</label>
-
-        <input type="text" v-model="adres"><br><br>
+        <input type="text" v-model="direccion"><br><br>
         <label for="">Etiqueta:</label>
-        <select name="selecciona una" v-model="label">
-            <option value="">Familia</option>
-            <option value="">Amigos</option>
-            <option value="">Otros</option>
+        <select name="selecciona una" v-model="etiqueta">
+            <option value="Casa">Casa</option>
+            <option value="Trabajo">Trabajo</option>
+            <option value="Otro">Otro</option>
         </select>
         <br><br>
 
@@ -34,28 +33,28 @@
         <input type="button"value="Ver contactos" v-on:click="consultarContactos">
         <div>
             <h1>Eliminar Contactos</h1>
-            <label for="">Ingrese Cedula: </label><input type="text" v-model="ideliminar">
-            <input type="button" value="Eliminar" v-on:click="eliminaCliente">
+            <label for="">Ingrese Nombre: </label><input type="text" v-model="ideliminar">
+            <input type="button" value="Eliminar" v-on:click="eliminaContacto">
             <br>
             <br>
         </div>
         <table border=1>
             <thead>
                 <tr>
-                    <td>Cedula</td>
                     <td>Nombre</td>
                     <td>Apellido</td>
                     <td>Teléfono</td>
                     <td>Correo</td>
+                    <td>Dirección</td>
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="cliente in datosconsulta">
-                    <td>{{ cliente.id }}</td>
-                    <td>{{ cliente.nombre }}</td>
-                    <td>{{ cliente.apellido }}</td>
-                    <td>{{ cliente.telefono }}</td>
-                    <td>{{ cliente.correo }}</td>
+                <tr v-for="contacto in datosconsulta">
+                    <td>{{ contacto.id }}</td>
+                    <td>{{ contacto.apellido }}</td>
+                    <td>{{ contacto.telefono }}</td>
+                    <td>{{ contacto.correo }}</td>
+                    <td>{{ contacto.direccion+". "+contacto.etiqueta }}</td>
                 </tr>
             </tbody>
         </table>

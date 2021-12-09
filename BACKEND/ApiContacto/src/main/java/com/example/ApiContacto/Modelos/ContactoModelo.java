@@ -4,28 +4,25 @@ import org.springframework.data.annotation.Id;
 
 public class ContactoModelo {
     @Id
-    private Long id;
+    private String id;
     private String nombre;
     private String apellido;
     private String telefono;
     private String correo;
-    //private String direccion;
-    //private String etiqueta;
+    private String direccion;
+    private String etiqueta;
     
-    public class di{
-        String adres;
-        String label;
-    }
-    public Long getId() {
+    
+    public String getId() {
         return id;
     }
-    //public String getEtiqueta() {
-    //    return etiqueta;
-    //}
-    //public void setEtiqueta(String etiqueta) {
-      //  this.etiqueta = etiqueta;
-    //}
-    public void setId(Long id) {
+    public String getEtiqueta() {
+        return etiqueta;
+    }
+    public void setEtiqueta(String etiqueta) {
+        this.etiqueta = etiqueta;
+    }
+    public void setId(String id) {
         this.id = id;
     }
     public String getNombre() {
@@ -52,11 +49,11 @@ public class ContactoModelo {
     public void setCorreo(String correo) {
         this.correo = correo;
     }
-    //public String getDireccion() {
-        //return direccion;
-    //}
-    //public void setDireccion(String direccion) {
-    //        this.direccion = direccion;
-    //}
+    public String getDireccion() {
+        return direccion;
+    }
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
     
 }

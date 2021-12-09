@@ -32,11 +32,11 @@ public class ContactoControlador {
         return serv.consultaTodos();
     }
     @DeleteMapping(path = "/{id}")
-    public boolean eliminaContacto(@PathVariable("id") Long id){
+    public boolean eliminaContacto(@PathVariable("id") String id){
         return serv.eliminaContacto(id);
     }
     @GetMapping(path = "/{id}")
-    public Optional<ContactoModelo> consultaPorId(@PathVariable("id")Long id){
+    public Optional<ContactoModelo> consultaPorId(@PathVariable("id")String id){
         return serv.consultaContactoId(id);
     }
     @GetMapping(path = "buscar/{nombre}")
